@@ -4,15 +4,6 @@
     // File Layout
      "rootDir": "./src",
      "outDir": "./dist",
-    "include": [
-      "src/**/*"
-    ],
-    "exclude": [
-      "node_modules",
-      "dist",
-      "tests",
-      "**/*.test.ts"
-    ],
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
@@ -49,5 +40,14 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests",
+    "**/*.test.ts"
+  ]
 }
