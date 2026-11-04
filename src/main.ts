@@ -9,7 +9,6 @@ console.log(new Tag("img", { src: "path/to/image" }).toString());
 console.log(new Tag("input", { type: "submit", value: "Save" }).toString());
 // <input type="submit" value="Save">
 
-// Для парных тегов надо придумать как лучше
 console.log(new Tag("label", {}, "Email").toString());
 // <label>Email</label>
 

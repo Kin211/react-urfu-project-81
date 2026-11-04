@@ -18,7 +18,7 @@ export class Tag {
 
     private renderAttributesString(): string {
         const attrs = Object.entries(this.attributes)
-            .filter(([key, value]) => value !== false)
+            .filter(([, value]) => value !== false)
             .map(([key, value]) => {
                 if (value === true) return key;
                 return `${key}="${value}"`;
