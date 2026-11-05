@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { FormGenerator } from '../src/domain/index.js';
 
-describe('HexletCode.formFor', () => {
+describe('FormGenerator', () => {
     const template = { name: 'rob', job: 'hexlet', gender: 'm' };
 
     it('форма по умолчанию с action="#" и method="post"', () => {
