@@ -28,8 +28,22 @@ cd react-urfu-project-81
 
 ## Использование
 
-<!-- Добавьте примеры запуска и запись asciinema — именно это смотрит работодатель -->
+```
+import { FormGenerator } from './src';
 
+const template = { name: 'rob', job: 'hexlet', gender: 'm' };
+
+const form = FormGenerator.formFor(template, { method: 'post' }, (f) => {
+f.input('name');
+f.input('job', { as: 'textarea' });
+});
+
+Результат
+<form action="#" method="post">
+  <input name="name" type="text" value="rob">
+  <textarea cols="20" rows="40" name="job">hexlet</textarea>
+</form>
+```
 ---
 
 <details>

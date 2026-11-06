@@ -15,8 +15,8 @@
   "type": "module",
   "main": "dist/main.js",
   "scripts": {
-    "dev": "tsx src/main.ts",
-    "dev:watch": "tsx watch src/main.ts",
+    "dev": "tsx src/index.ts",
+    "dev:watch": "tsx watch src/index.ts",
     "build": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

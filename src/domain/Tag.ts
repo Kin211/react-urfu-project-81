@@ -9,6 +9,7 @@ export class Tag {
     private name: string;
     private attributes: Attributes = {};
     private content: string | undefined;
+    private childTags: Tag[] = [];
 
     constructor(name: string, attributes: Attributes = {}, content?: string) {
         this.name = name.toLowerCase();
@@ -27,6 +28,14 @@ export class Tag {
         return attrs.length ? ' ' + attrs.join(' ') : '';
     }
 
+    public addChildTags(tags: Tag[]) {
+        if (SOLO_TAGS.has(this.name)) {
+            throw new Error(`Tag <${this.name}> is a void tag and cannot contain children.`);
+        }
+        this.childTags.push(...tags);
+        return this;
+    }
+
     public toString(): string {
         const attrsStr = this.renderAttributesString();
 
@@ -34,6 +43,10 @@ export class Tag {
             return `<${this.name}${attrsStr}>`;
         }
 
-        return `<${this.name}${attrsStr}>${this.content ?? ""}</${this.name}>`;
+        const childs = this.childTags
+            .map(child => child.toString())
+            .join('');
+
+        return `<${this.name}${attrsStr}>${this.content ?? ""}${childs}</${this.name}>`;
     }
 }
